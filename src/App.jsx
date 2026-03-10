@@ -2,14 +2,15 @@ import { useLocation } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./style.css";
+
+import SplashScreen from "./components/SplashScreen";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
-import Contactme from "./Contactme";
-import Loader from "./components/Loader";
+import Contactme from "./Contactme"; 
 
 // Komponen pembantu untuk reset scroll saat pindah halaman
 function ScrollToTop() {
@@ -31,24 +32,14 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // loader visible for 2 seconds
+    }, 5000); // loader visible for 2 seconds
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading == true) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-        }}
-      >
-        <Loader color="#ffffff" size={40} stroke={3} />
-      </div>
-    );
+
+  if (loading) {
+    return <SplashScreen />;
   }
   return (
     <BrowserRouter>
