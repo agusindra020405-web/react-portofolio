@@ -21,6 +21,9 @@ function Header() {
       <div className="nav-container">
         <NavHashLink smooth to="/#home" className="nav-logo">
           <i className="bi bi-person-circle"></i>Agus Indra
+          <h1 className="text-4xl text-blue-500 font-bold">
+            Tailwind Berhasil
+          </h1>
         </NavHashLink>
 
         {/* Tambahkan class 'active' jika state isActive bernilai true */}
